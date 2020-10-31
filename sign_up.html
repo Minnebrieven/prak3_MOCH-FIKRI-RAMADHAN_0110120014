@@ -5,54 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar</title>
     <link rel="stylesheet" href="assets/css/sign_up.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 </head>
 <body>
     <div class="navbar">
-        <a><b>FarTravel</b></a>
+        <a><b>ZieTravel</b></a>
         <a href="./index.html">Home</a>
         <a href="./promosi.html">Promosi</a>
     </div>
     
-    <form action="#" method="POST">
-        <div class="container">
-            <h1>Daftar</h1>
-            <p>Mohon isi form ini dengan sejujurnya</p>
-            <hr>
-            <label for="nama"><b>Nama</b></label>
-            <input type="text" name="nama" id="nama" placeholder="Masukan Nama Anda" required>
-            <label for="email"><b>Email</b></label>
-            <input type="email" name="email" id="email" placeholder="Masukan Email anda" required>
-            <label for="transportasi"><b>Transportasi</b></label>
-            <p>pilih tipe transportasi kesukaanmu</p>
-            <div id="transportasi">
-                <input type="checkbox" name="darat" id="darat" value="darat">
-                <label for="darat">Darat</label>
-                <input type="checkbox" name="udara" id="udara" value="udara">
-                <label for="udara">Udara</label>
-                <input type="checkbox" name="laut" id="laut" value="laut">
-                <label for="laut">Laut</label>
+    <form>
+        <div class="form-group row">
+          <label for="nama" class="col-4 col-form-label">Nama</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-address-card"></i>
+                </div>
+              </div> 
+              <input id="nama" name="nama" type="text" class="form-control" required="required">
             </div>
-            <br>
-            <label for="gender"><b>Jenis Kelamin</b></label><br>
-            <div id="gender">
-                <input type="radio" name="gender" id="male" value="male">
-                <label for="male">Pria</label>
-                <input type="radio" name="gender" id="female" value="female">
-                <label for="female">Wanita</label>
-            </div>
-            <br>
-            <label for="layanan"><b>Pilih Tipe Pelayanan</b></label><br>
-            <select name="layanan" id="layanan">
-                <option value="reguler">Reguler</option>
-                <option value="vip">VIP</option>
-            </select>
-            <br><br>
-            <label for="alamat"><b>Alamat</b></label><br>
-            <textarea name="alamat" id="alamat" cols="100%" rows="10" required></textarea><br><br>
-            <label for="foto"><b>Foto</b></label>
-            <input type="file" name="foto" id="foto" required><br>
-            <button type="submit" class="registerbtn">Daftar</button>
+          </div>
         </div>
-    </form>
+        <div class="form-group row">
+          <label for="text" class="col-4 col-form-label">Email</label> 
+          <div class="col-8">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-at"></i>
+                </div>
+              </div> 
+              <input id="text" name="text" type="text" class="form-control" required="required">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4">Jenis Kelamin</label> 
+          <div class="col-8">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input name="gender" id="gender_0" type="radio" required="required" class="custom-control-input" value="pria"> 
+              <label for="gender_0" class="custom-control-label">Pria</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input name="gender" id="gender_1" type="radio" required="required" class="custom-control-input" value="wanita"> 
+              <label for="gender_1" class="custom-control-label">Wanita</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4">Transportasi</label> 
+          <div class="col-8">
+            <div class="custom-control custom-checkbox custom-control-inline">
+              <input name="transportasi" id="transportasi_0" type="checkbox" class="custom-control-input" value="darat" aria-describedby="transportasiHelpBlock"> 
+              <label for="transportasi_0" class="custom-control-label">Darat</label>
+            </div>
+            <div class="custom-control custom-checkbox custom-control-inline">
+              <input name="transportasi" id="transportasi_1" type="checkbox" class="custom-control-input" value="laut" aria-describedby="transportasiHelpBlock"> 
+              <label for="transportasi_1" class="custom-control-label">Laut</label>
+            </div>
+            <div class="custom-control custom-checkbox custom-control-inline">
+              <input name="transportasi" id="transportasi_2" type="checkbox" class="custom-control-input" value="udara" aria-describedby="transportasiHelpBlock"> 
+              <label for="transportasi_2" class="custom-control-label">Udara</label>
+            </div> 
+            <span id="transportasiHelpBlock" class="form-text text-muted">Pilih tipe transportasi kesukaanmu!</span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tipe_pelayanan" class="col-4 col-form-label">Tipe Pelayanan</label> 
+          <div class="col-8">
+            <select id="tipe_pelayanan" name="tipe_pelayanan" class="custom-select">
+              <option value="reguler">Reguler</option>
+              <option value="exclusive">Exclusive</option>
+              <option value="vip">VIP</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="alamat" class="col-4 col-form-label">Alamat</label> 
+          <div class="col-8">
+            <textarea id="alamat" name="alamat" cols="40" rows="3" class="form-control" required="required"></textarea>
+          </div>
+        </div> 
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Daftar</button>
+          </div>
+        </div>
+      </form>
 </body>
 </html>
